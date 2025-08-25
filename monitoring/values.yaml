@@ -1,0 +1,27 @@
+kube-prometheus-stack:
+  namespaceOverride: "monitoring"
+
+  alertmanager:
+    enabled: false
+
+  prometheus:
+    enabled: true
+    service:
+      type: ClusterIP
+    prometheusSpec:
+      retention: 7d
+      scrapeInterval: 15s
+      serviceMonitorSelector:
+        matchLabels:
+          thmanyah.com/monitor: "true"
+      podMonitorSelector:
+        matchLabels:
+          thmanyah.com/monitor: "true"
+
+  grafana:
+    enabled: true
+    adminPassword: "admin"
+    service:
+      type: ClusterIP
+    ingress:
+      enabled: false
