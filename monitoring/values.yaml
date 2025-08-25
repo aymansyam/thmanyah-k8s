@@ -1,9 +1,30 @@
 kube-prometheus-stack:
   namespaceOverride: "monitoring"
 
+  # No Alertmanager
   alertmanager:
     enabled: false
 
+  # Disable control-plane collectors that try to create Services in kube-system
+  defaultRules:
+    create: true
+    rules:
+      etcd: false
+      kubeScheduler: false
+      kubeControllerManager: false
+      kubeProxy: false
+  kubeEtcd:
+    enabled: false
+  kubeScheduler:
+    enabled: false
+  kubeControllerManager:
+    enabled: false
+  kubeProxy:
+    enabled: false
+  kubelet:
+    enabled: false
+
+  # Prometheus + Grafana minimal
   prometheus:
     enabled: true
     service:
@@ -25,3 +46,9 @@ kube-prometheus-stack:
       type: ClusterIP
     ingress:
       enabled: false
+
+  kube-state-metrics:
+    enabled: true
+
+  nodeExporter:
+    enabled: true
