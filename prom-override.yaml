@@ -1,0 +1,15 @@
+prometheusOperator:
+  enabled: true
+
+prometheus:
+  prometheusSpec:
+    serviceMonitorSelectorNilUsesHelmValues: false
+    podMonitorSelectorNilUsesHelmValues: false
+    serviceMonitorSelector: {}
+    podMonitorSelector: {}
+    serviceMonitorNamespaceSelector: {}
+    podMonitorNamespaceSelector: {}
+
+admissionWebhooks:
+  patch:
+    namespace: monitoring
