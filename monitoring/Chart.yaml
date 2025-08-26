@@ -1,6 +1,6 @@
 apiVersion: v2
 name: monitoring
-description: Prometheus + Grafana (minimal)
+description: Prometheus + Grafana (pods/nodes only)
 type: application
 version: 0.1.0
 dependencies:

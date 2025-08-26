@@ -1,0 +1,9 @@
+apiVersion: v2
+name: stackgres
+description: Local wrapper chart for StackGres operator
+type: application
+version: 0.1.0
+dependencies:
+  - name: stackgres-operator
+    version: 1.17.1
+    repository: https://stackgres.io/downloads/stackgres-k8s/stackgres/helm/

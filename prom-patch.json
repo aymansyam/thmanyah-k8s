@@ -1,8 +1,0 @@
-{
-  "spec": {
-    "serviceMonitorSelector": {},
-    "podMonitorSelector": {},
-    "serviceMonitorNamespaceSelector": {},
-    "podMonitorNamespaceSelector": {}
-  }
-}

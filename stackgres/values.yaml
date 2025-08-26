@@ -1,0 +1,16 @@
+stackgres-operator:
+  installCRDs: true
+  namespace: stackgres
+
+  # Change these based on your cluster
+  rbac:
+    create: true
+
+  # Operator resource limits
+  resources:
+    requests:
+      cpu: "250m"
+      memory: "256Mi"
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
